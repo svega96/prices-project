@@ -24,11 +24,15 @@ public class PricesManager {
 		log.info("Date {}, brandId: {}, productId: {}", requestedPrice.getDate(), requestedPrice.getBrandId(), requestedPrice.getProductId());
 		//Recuperación de datos de BD
 		List<Prices> pricesFromDb = pricesMapper.getPricesByDateAndBrandAndProduct(requestedPrice.getDate(), requestedPrice.getProductId(), requestedPrice.getBrandId());
-		//Utilización de comparador para ordernar la lista por la prioridad del precio. Ordenación de menor a mayor.
-		List<Prices> sortedPrices = pricesFromDb.stream().sorted((p1, p2) -> p1.getPriority().compareTo(p2.getPriority())).collect(Collectors.toList());
-		log.info("Returned price: {}", sortedPrices.get(sortedPrices.size()-1).getPrice());
-		//Se devuelve el último elemento de la lista(Mayor prioridad)
-		return sortedPrices.get(sortedPrices.size()-1);
+		if (!pricesFromDb.isEmpty()) {
+			//Utilización de comparador para ordernar la lista por la prioridad del precio. Ordenación de menor a mayor.
+			List<Prices> sortedPrices = pricesFromDb.stream().sorted((p1, p2) -> p1.getPriority().compareTo(p2.getPriority())).collect(Collectors.toList());
+			log.info("Returned price: {}", sortedPrices.get(sortedPrices.size()-1).getPrice());
+			//Se devuelve el último elemento de la lista(Mayor prioridad)
+			return sortedPrices.get(sortedPrices.size()-1);
+		}
+		return null;
+		
 	}
 
 }
