@@ -1,8 +1,6 @@
 spring:
   jackson:
     default-property-inclusion: non-empty
-  flyway:
-    enabled: false
   h2:
     console:
       enabled: true

@@ -13,7 +13,5 @@ public interface PricesMapper {
 
 	@Select("SELECT brand_id, start_date, end_date, price_list, product_id, priority, price, curr FROM prices WHERE start_date <= #{date} AND end_date >= #{date} AND product_id = #{productId} AND brand_id = #{brandId}")
 	List<Prices> getPricesByDateAndBrandAndProduct(Date date, Integer productId, Integer brandId);
-	
-	
 
 }

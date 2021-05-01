@@ -26,7 +26,7 @@ import com.technicaltest.prices.project.model.Prices;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class PricesProjectApplicationTests {
+class PricesManagerIntegrationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -35,7 +35,7 @@ class PricesProjectApplicationTests {
 	private PricesManager pricesManager;
 	
 	@Test
-	public void test1() throws Exception {
+	public void checkPriceTest1() throws Exception {
 		
 		Integer brandId = 1;
 		Integer productId = 35455;
@@ -57,7 +57,7 @@ class PricesProjectApplicationTests {
 	}
 	
 	@Test
-	public void test2() throws Exception {
+	public void checkPriceTest2() throws Exception {
 		
 		Integer brandId = 1;
 		Integer productId = 35455;
@@ -79,7 +79,7 @@ class PricesProjectApplicationTests {
 	}
 	
 	@Test
-	public void test3() throws Exception {
+	public void checkPriceTest3() throws Exception {
 		
 		Integer brandId = 1;
 		Integer productId = 35455;
@@ -101,7 +101,7 @@ class PricesProjectApplicationTests {
 	}
 	
 	@Test
-	public void test4() throws Exception {
+	public void checkPriceTest4() throws Exception {
 		
 		Integer brandId = 1;
 		Integer productId = 35455;
@@ -123,7 +123,7 @@ class PricesProjectApplicationTests {
 	}
 	
 	@Test
-	public void test5() throws Exception {
+	public void checkPriceTest5() throws Exception {
 		
 		Integer brandId = 1;
 		Integer productId = 35455;
